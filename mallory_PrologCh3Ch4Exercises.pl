@@ -76,22 +76,6 @@ greater_than(succ(_), 0).
 greater_than(succ(X), succ(Y)) :-
     greater_than(X, Y).
 
-/*
-3.5 Binary trees are trees where all internal nodes have exactly two children. The smallest binary trees consist of only one leaf node. We will represent leaf nodes as leaf(Label) . For instance, leaf(3) and leaf(7) are leaf nodes, and therefore small binary trees. Given two binary trees B1 and B2 we can combine them into one binary tree using the functor tree/2 as follows: tree(B1,B2) . So, from the leaves leaf(1) and leaf(2) we can build the binary tree tree(leaf(1),leaf(2)) . And from the binary trees tree(leaf(1),leaf(2)) and leaf(4) we can build the binary tree tree(tree(leaf(1),  leaf(2)),leaf(4)) .
-
-Now, define a predicate swap/2 , which produces the mirror image of the binary tree that is its first argument. For example:
-
-   ?-  swap(tree(tree(leaf(1),  leaf(2)),  leaf(4)),T). 
-   T  =  tree(leaf(4),  tree(leaf(2),  leaf(1))). 
-   yes
-*/
-
-swap(leaf(X), leaf(X)).
-swap(tree(A,B), tree(C,D)) :-
-    swap(C,B),
-    swap(A,D).
-
-/*
 3.4 - 1
 Write a predicate path/2 that tells you from which points in the maze you can get to which other points when chaining together connections given in the above knowledge base. Can you get from point 5 to point 10? Which other point can you get to when starting at point 1? And which points can be reached from point 13?
 */
