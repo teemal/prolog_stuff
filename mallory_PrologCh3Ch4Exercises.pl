@@ -127,7 +127,7 @@ Write a predicate travel/2 which determines whether it is possible to travel fro
    byPlane(bangkok,auckland). 
    byPlane(singapore,auckland). 
    byPlane(losAngeles,auckland).
-
+/*
 goTo(A, B) :-
     byCar(A, B);
     byPlane(A, B);
@@ -137,7 +137,13 @@ travel(A, B) :-
 travel(A, B) :-
     goTo(A, X),
     travel(X, B).
+*/
+travel(X, Y) :- byCar(X, Y).
+travel(X, Y) :- byPlane(X, Y).
+travel(X, Y) :- byTrain(X, Y).
 
+
+            
 
 /*
 
