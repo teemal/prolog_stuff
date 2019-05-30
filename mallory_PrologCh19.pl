@@ -65,7 +65,7 @@ third([_,_,C|_],C).
 
 firstPair( [X, X | _]).
 
-del3([A, B, _ | D], [A, B, _ | D]).
+del3([A, B, _ | D], [A, B| D]).
 
 dupList([],[]).
 dupList([A|B], [A, A|C]) :- dupList(B, C).
@@ -83,6 +83,8 @@ evenSize([_|B]) :-
     oddSize(B).
 
 /*q 14 -- no clue what the hell the author is asking for */
+
+prefix(X,Y) :- append(X,_,Y).
 
 isMember(A, [A|B]) :- 
     A = B, 
