@@ -135,7 +135,9 @@ lastRec([_|T], X) :- last_rec(T, X).
 
 */
 
-%this one kind of lost me
+swapfl([A|As], [B|Bs]) :-
+    reverse(As, [B|X]),
+    reverse(Bs, [A|X]).
 
 /*
 
@@ -153,3 +155,23 @@ Who keeps the zebra? Don’t work it out for yourself: define a predicate zebra/
 
 */
 
+%TODO
+
+/*
+We ‘flatten’ a list by removing all the square brackets around any lists it contains as elements, and around any lists that its elements contain as elements, and so on, for all nested lists. For example, when we flatten the list
+   [a,b,[c,d],[[1,2]],foo]
+we get the list
+
+   [a,b,c,d,1,2,foo]
+and when we flatten the list
+
+   [a,b,[[[[[[[c,d]]]]]]],[[1,2]],foo,[]]
+we also get
+
+   [a,b,c,d,1,2,foo].
+Write a predicate flatten(List,Flat) that holds when the first argument List flattens to the second argument Flat . This should be done without making use of append/3 .
+
+Ok, we’re now halfway through the book. And flattening a list is the Pons Asinorum of Prolog programming. Did you cross it ok? If so, great. Time to move on.
+*/
+
+%TODO
